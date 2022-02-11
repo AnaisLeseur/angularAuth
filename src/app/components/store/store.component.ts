@@ -8,15 +8,19 @@ import {Product} from "../../models/product";
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
+  public selectedCategory:any;
 
   constructor(private repoistory: ProductRepository) { }
 
   ngOnInit(): void {
   }
   get products (): Product[] {
-    return this.repoistory.getProducts()
+    return this.repoistory.getProducts(this.selectedCategory);
   }
   get categories (): (string | undefined)[] {
     return this.repoistory.getCategories()
+  }
+  changeCategory (newCategory?: string) {
+    this.selectedCategory = newCategory;
   }
 }
