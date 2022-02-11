@@ -4,6 +4,7 @@
       <a class="navbar-brand">
         Sport E-Commerce
       </a>
+      <app-cart-summary></app-cart-summary>
     </div>
   </div>
   <div class="row">
@@ -24,6 +25,9 @@
         </h4>
         <div class="card-text bg-white p-1">
           {{product.description}}
+          <button class="btn-success btn-sm float-right" (click)="addProductToCart(product)">
+            Ajouter au panier
+          </button>
         </div>
       </div>
       <div class="form-inline float-left mr-1">

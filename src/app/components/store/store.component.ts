@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductRepository} from "../../models/product.repository";
 import {Product} from "../../models/product";
+import { Cart } from 'src/app/models/cart';
 
 @Component({
   selector: 'app-store',
@@ -12,7 +13,7 @@ export class StoreComponent implements OnInit {
   public productPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repoistory: ProductRepository) { }
+  constructor(private repoistory: ProductRepository, private cart:Cart) { }
 
   ngOnInit(): void {
   }
@@ -35,5 +36,9 @@ export class StoreComponent implements OnInit {
   }
   get pageNumbers ():number[] {
     return Array(Math.ceil(this.repoistory.getProducts(this.selectedCategory).length/this.productPerPage)).fill(0).map((x, i)=>i+1);
+  }
+
+  addProductToCart(product:Product) {
+    this.cart.addLine(product);
   }
 }

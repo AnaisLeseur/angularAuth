@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ProductRepository} from "./product.repository";
+import { Cart } from './cart';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import {ProductRepository} from "./product.repository";
     CommonModule
   ],
   providers: [
-    ProductRepository
+    ProductRepository, 
+    Cart
   ]
 })
 export class ModelsModule { }

@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import {ModelsModule} from "../../models/models.module";
 import {FormsModule} from "@angular/forms";
 import {StoreComponent} from "./store.component";
+import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
 
 
 
 @NgModule({
   declarations: [
-    StoreComponent
+    StoreComponent,
+    CartSummaryComponent
   ],
   imports: [
     CommonModule,
