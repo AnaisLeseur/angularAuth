@@ -6,12 +6,23 @@
       </a>
     </div>
   </div>
-  <div class="row text-white">
-    <div class="col-3 bg-info p-2">
+  <div class="row">
+    <div class="col-3 bg-info p-2 text-white">
       {{ categories.length }} categories
     </div>
-    <div class="col-9 bg-success p-2">
-      {{ products.length }} products
+    <div class="col-9 p-2">
+      <div class="card m-1 p-1" *ngFor="let product of products">
+        <h4>{{product.name}}
+          <span class="badge badge-pill badge-primary float-right bg-danger">
+            {{ product.price | currency:"EUR"}}
+          </span>
+        </h4>
+        <div class="card-text bg-white p-1">
+          {{product.description}}
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+
